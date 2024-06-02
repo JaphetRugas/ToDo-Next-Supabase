@@ -1,3 +1,4 @@
+// config email templates to authenticate user registration
 import { type EmailOtpType } from '@supabase/supabase-js'
 import { type NextRequest, NextResponse } from 'next/server'
 
@@ -27,7 +28,7 @@ export async function GET(request: NextRequest) {
     }
   }
 
-  // return the user to an error page with some instructions
-  redirectTo.pathname = '/error'
+  // return the user to an error page with some instructions 
+  redirectTo.pathname = '/login?message=Could not verify OTP'
   return NextResponse.redirect(redirectTo)
 }

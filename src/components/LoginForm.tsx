@@ -15,11 +15,6 @@ export default function LoginForm({ message }: LoginFormProps) {
         <Card className="mx-auto max-w-sm">
             <CardHeader>
                 <CardTitle className="text-2xl">Login</CardTitle>
-                {message && (
-                    <div className="text-sm font-medium text-destructive">
-                        {message}
-                    </div>
-                )}
                 <CardDescription>
                     Enter your email below to login to your account
                 </CardDescription>
@@ -47,8 +42,12 @@ export default function LoginForm({ message }: LoginFormProps) {
                             type="password"
                             required
                         />
-                    </div>
-
+                    </div> 
+                    {message && (
+                        <div className="text-sm font-medium">
+                            {message}
+                        </div>
+                    )}
                     <SubmitButton
                         formAction={login}
                         className="w-full"

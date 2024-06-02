@@ -11,23 +11,20 @@ export type Database = {
     Tables: {
       todos: {
         Row: {
-          created_at: string
           id: number
-          is_complete: boolean
+          is_complete: boolean | null
           title: string
           user_id: string
         }
         Insert: {
-          created_at: string
           id?: number
-          is_complete?: boolean
+          is_complete?: boolean | null
           title: string
           user_id: string
         }
         Update: {
-          created_at?: string
           id?: number
-          is_complete?: boolean
+          is_complete?: boolean | null
           title?: string
           user_id?: string
         }
